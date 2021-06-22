@@ -2,10 +2,14 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="./styling/update.css">
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./jquery.min.js"></script>
 </head>
 
 <style>
+    .checked {
+  color: orange;
+}
     .index_table {
         text-transform: uppercase;
         width: 100%;
@@ -54,7 +58,7 @@
 <script>
     window.onload = function() {
     localStorage.clear();
-    let url="https://faculty-app1.herokuapp.com/api/v1/"
+    let url="https://web-terminal-anas.herokuapp.com/api/v1/get"
     fetch(url).then(res=>{
         
         res.json().then(data=>{

@@ -1,3 +1,4 @@
+
 let DBData=[];
 
 /*-----------------------functions---------------------------*/
@@ -20,7 +21,7 @@ function showData(user){
         var empTab = document.querySelector('.index_table')
         var rowCnt = empTab.rows.length // GET TABLE ROW COUNT.
         var tr = empTab.insertRow(rowCnt)
-        for (var c = 0; c < 9; c++) {
+        for (var c = 0; c < 5; c++) {
             var td = document.createElement('td') // TABLE DEFINITION.
             td = tr.insertCell(c)
             if (c == 0) {
@@ -34,14 +35,26 @@ function showData(user){
             }
            
             if (c == 3) {
-                td.innerHTML = rating
+                let stars = document.createElement('div')
+                let ratings = rating;
+                for(let k=0;k<5;k++){
+                    let star = document.createElement('span')
+                   
+                    star.setAttribute('class', 'fa fa-star');
+                    if(ratings){
+                        star.setAttribute('class', 'fa fa-star checked');
+                    ratings--;}
+                    stars.appendChild(star)
+
+                }
+                td.appendChild(stars)
             }
            
             if (c == 4) {
                 var button = document.createElement('a');
 
                 // SET INPUT ATTRIBUTE.
-                button.innerHTML = "EDIT";
+                button.innerHTML = "Add to cart";
                 button.setAttribute('class', 'mybutt');
                 // ADD THE BUTTON's 'onclick' EVENT.
                 /* button.setAttribute('onclick', '#');*/
@@ -81,40 +94,45 @@ function search3(event) {
 
 }
 function Add(event){
-    localStorage.clear();
+    if(localStorage.getItem('token'))
     window.location.href="Form.html"
-}
-
-function UpdateForm(event) {
-    // console.log(event.id)
-    
-    if(event.name==="EDIT"){
-    localStorage.setItem("id",event.id);
-    window.location.href="Form.html"
-}
-   
-
-    
-}
-
-
-function Delete(event) {
-    let  url=`https://faculty-app1.herokuapp.com/api/v1/${event.id}`
-   let options = {
-       method: 'DELETE',
-       headers: {
-        "Content-type": "application/json; charset=UTF-8"
+    else{
+        window.location.href="Login.html"
     }
-   }
-    fetch(url,options).then(res=>{
+}
+
+
+
+function AddToCart(event){
+    let searchField = event.id
+    const FilteredMonsters = DBData.filter(db=>
+        db._id.includes(searchField))
+    let obj = FilteredMonsters[0];
+    // console.log(obj)
+    let cart = JSON.parse(localStorage.getItem('Cart'))
+    console.log(cart)
+    if(cart){
+    const ar = cart.filter(db => db._id.includes(searchField))
+    if(ar.length){
+        alert("Product already exists")
+        return
+    }
+    
+    cart.push(obj) 
+    localStorage.setItem('Cart',JSON.stringify(cart))
+    if(cart.length>2)
+    window.location.href = "review.html"
+    else {
+        alert("Product Added")
+    }
+}
+    else{
+        let cart = []
+        cart.push(obj)
+        localStorage.setItem('Cart',JSON.stringify(cart))
+        alert("Product Added")
+    }
         
-        
-            if(res.status==200)
-           location.reload();
-            else window.alert("some error")
-        }).catch(err=>{
-            console.log(err);
-            window.alert("No results Found")
-        });
+
 }
 /*---------------------End Functions--------------------------*/
