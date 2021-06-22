@@ -6,6 +6,7 @@ import { UserModel } from '../Data/users';
 const jwt_key = 'KOidFxnBUFjFbtRKPMkwGeiT5r8sgjXQWAMCNMQlV';
 
 export const ValidateApiSchema = (schema) => (req, res, next) => {
+  console.log(req.body)
   const error = check(req.body, schema);
   if (error) {
     return response(res, 400, {
@@ -51,7 +52,8 @@ export const isAuth = async (req, res, next) => {
       Message: resmessage.un_authorized_access
     });
   }
-  try {
+  console.log(decodedToken)
+    try {
     const validate_user = await UserModel.findOne({
       _id: decodedToken.userId,
       email: decodedToken.email,

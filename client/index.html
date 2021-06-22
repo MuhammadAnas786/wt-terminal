@@ -34,6 +34,12 @@
                  </label>
                 <input type="text " class="Search" id="search" name="customerdetails"  onkeyup="search3(this)" placeholder="search ">
             </div>
+            <div class="field-box ">
+                <label>
+               CheckOut:
+                 </label>
+               <button  onclick="reset(this)" class="buta button">Pay Now</a>
+            </div> 
 		</div> 
 		
 
@@ -57,7 +63,7 @@
 <script src="index.js "></script>
 <script>
     window.onload = function() {
-    localStorage.clear();
+  
     let url="https://web-terminal-anas.herokuapp.com/api/v1/get"
     fetch(url).then(res=>{
         
@@ -82,6 +88,8 @@
 
 
 }
-
+function reset(e){
+    window.location.href = "review.html"
+}
 </script>
 </html>

@@ -14,6 +14,8 @@ routes.post('/login', ValidateApiSchema(login), userController.login);
 
 routes.get('/get',productController.get);
 routes.post('/Add',isAuth,ValidateApiSchema(Add) ,  productController.Add);
+routes.put('/edit/:id',  productController.edit);
+
 
 
 

@@ -79,14 +79,9 @@ function search3(event) {
     
     let searchField = event.value
     const FilteredMonsters = DBData.filter(db=>
-        db.id.includes(searchField)||db.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.email.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.gender.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.course_code.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.address.street_address.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.address.city.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.address.country.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())
-          )
+        db._id.includes(searchField)||db.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
+        db.description.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
+        db.price.includes(searchField)          )
          
           showData(FilteredMonsters)
           
@@ -115,6 +110,7 @@ function AddToCart(event){
     const ar = cart.filter(db => db._id.includes(searchField))
     if(ar.length){
         alert("Product already exists")
+        
         return
     }
     
@@ -131,8 +127,9 @@ function AddToCart(event){
         cart.push(obj)
         localStorage.setItem('Cart',JSON.stringify(cart))
         alert("Product Added")
+       
     }
-        
+    
 
 }
 /*---------------------End Functions--------------------------*/

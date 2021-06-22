@@ -56,5 +56,35 @@ export const products = {
         }
       };
     }
+  },
+  edit:  async (req) => {
+    let data = req.body;
+
+    try {
+     
+
+      const ref = await ProductModel.findByIdAndUpdate(req.params.id,{ rating:data.rating });
+
+    
+     
+      return {
+        status: 200,
+        body: { message: resmessage.record_added, id: ref._id }
+      };
+    } catch (err) {
+      if (err.name === 'ValidationError') {
+        return {
+          status: 400,
+          body: {
+            message: resmessage.mongodb_validation_err,
+            error: err
+          }
+        };
+      }
+      return {
+        status: 400,
+        body: { message: resmessage.something_wrong, err }
+      };
+    }
   }
 };
