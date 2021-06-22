@@ -6,10 +6,37 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <title>Untitled Document</title>
 </head>
+<style>
+      a {
+        color: aqua;
+    }
+    form a {
+        font-size: 20px;
+        text-transform: capitalize;
+        
+    }
+    form{
+        margin-bottom: 10rem;
+    }
+    form h1{
+        margin-left:3rem;
+        margin-top: 1rem;
+        color: white;
+    }
+    .centric{
+        margin-left: 8rem;
+        font-size: 1.4rem;
+    }
 
+</style>
     <body>
         <div class="main">
             <form id="myForm">
+                <a href="Login.html">Already have an account? Login <a></a>
+                    <br/>
+                   <p class="centric">or</p>
+
+                <h1>Signup Now!</h1>
                 <p> name:</p>
                 <input type="text" name="fullname" border="5px solid"><br>
 
@@ -31,9 +58,10 @@
         <input type="password" required name="password"/>
 
         <p>Repeat Password:</p>
-        <input type="password" required name="repeat_password">
+        <input type="password" required name="repeat_password"><br/>
 
-        <input type="submit" onclick="Submit(event)" value="submit" width="50px" class="button">
+        <input type="submit" onclick="Submit(event)" value="submit" width="50px" class="button"><br/>
+       
     </form>
     </div>
     </body>

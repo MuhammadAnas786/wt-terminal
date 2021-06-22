@@ -63,7 +63,7 @@
         <div class="sub_container ">
             <div class="field-box ">
                 
-               <button   onclick="window.location.href='Login.html'" class="button Login">
+               <button   onclick="window.location.href='Login.html'" id="Login" class="button Login">
                 Login
             <i class=" fas fa-sign-in-alt LoginButton"></i>
             </button>
@@ -103,7 +103,11 @@
 <script src="index.js "></script>
 <script>
     window.onload = function() {
-  
+  let token = localStorage.getItem('token');
+  if(token){
+    let Login =  document.querySelector('#Login')
+    Login.innerHTML = "Logout"+'<i class=" fas fa-sign-in-alt LoginButton"></i>'
+  }
     let url="https://web-terminal-anas.herokuapp.com/api/v1/get"
     fetch(url).then(res=>{
         
