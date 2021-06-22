@@ -1,0 +1,32 @@
+<html>
+    
+<head>
+    <link rel="stylesheet" href="../styling/Form.css">
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <title>Untitled Document</title>
+</head>
+
+    <body>
+        <div class="main">
+            <form id="Login">
+        <p>email:</p><br>
+        <input type="email" name="email" border="5px solid"><br>
+
+       
+       
+        <p>Password:</p>
+        <input type="password" required name="password"/><br/>
+
+        
+        <input type="submit" onclick="Submit(event)" value="Login" width="50px" class="button"><br/>
+        <a href="./signup.html"> signup</a>
+    </form>
+    </div>
+    </body>
+    <script>
+        function Submit(e){
+            e.preventDefault();
+        }
+    </script>
+</html>

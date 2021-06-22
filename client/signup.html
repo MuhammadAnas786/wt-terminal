@@ -1,0 +1,42 @@
+<html>
+   
+<head>
+    <link rel="stylesheet" href="../styling/Form.css">
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <title>Untitled Document</title>
+</head>
+
+    <body>
+        <div class="main">
+            <form id="signup">
+        <p>email:</p><br>
+        <input type="email" name="email" border="5px solid"><br>
+
+       
+        <p>Gender:</p><br>
+        <p>MALE</p><br>
+        <input type="radio" value="male" onchange="changeDiv(this)" checked="checked" name="gender">
+        
+        <p>FEMALE</p><br>
+        <input type="radio" value="female"  onchange="changeDiv(this)"  name="gender" border="5px solid">
+        
+        <p>others</p><br>
+        <input type="radio" value="others"  onchange="changeDiv(this)"  name="gender" border="5px solid">
+
+        <p>Password:</p>
+        <input type="password" required name="password"/>
+
+        <p>Repeat Password:</p>
+        <input type="password" required name="repeat_password"
+
+        <input type="submit" onclick="Submit(event)" value="submit" width="50px" class="button">
+    </form>
+    </div>
+    </body>
+    <script>
+        function Submit(e){
+            e.preventDefault();
+        }
+    </script>
+</html>
