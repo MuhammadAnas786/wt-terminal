@@ -79,9 +79,8 @@ function search3(event) {
     
     let searchField = event.value
     const FilteredMonsters = DBData.filter(db=>
-        db._id.includes(searchField)||db.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.description.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
-        db.price.includes(searchField)          )
+       db.name.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())||
+        db.description.toLocaleLowerCase().includes(searchField.toLocaleLowerCase())         )
          
           showData(FilteredMonsters)
           

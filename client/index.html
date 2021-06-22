@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="./styling/update.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="./jquery.min.js"></script>
 </head>
 
@@ -22,29 +23,68 @@
         border: 1px solid black;
         border-collapse: collapse;
     }
+    .plussign{
+        margin-bottom: -4px;
+        margin-left: 3px;
+    }
+    .Checkout{
+    color: white;
+    padding: 13px;
+    background: #0ce3ff;
+    border: none;
+    font-size: 21px;
+    width: 152px;
+}
+.Search{
+    color: black;
+    padding: 11px;
+  
+    width: 152px;
+}
+.Login{
+    padding: 14px;
+    background-color: #f5f5f5;
+    font-size: 21px;
+    border: none;
+}
+.LoginButton{
+    font-size: 21px;
+    margin-bottom: -3px;margin-left: 5px;
+}
+.cart{
+    color: white;
+    font-size:21px ;
+}
+
 </style>
 
 <body>
     <div class=" container ">
         <div class="sub_container ">
-           
+            <div class="field-box ">
+                
+               <button   onclick="window.location.href='Login.html'" class="button Login">
+                Login
+            <i class=" fas fa-sign-in-alt LoginButton"></i>
+            </button>
+            </div> 
             <div class="field-box ">
                 <label>
-               Value:
+               Search:
                  </label>
                 <input type="text " class="Search" id="search" name="customerdetails"  onkeyup="search3(this)" placeholder="search ">
             </div>
             <div class="field-box ">
-                <label>
-               CheckOut:
-                 </label>
-               <button  onclick="reset(this)" class="buta button">Pay Now</a>
+               
+               <button   onclick="reset(this)" class="button CheckOut">Cart
+                <i class=" fas fa-shopping-cart cart"></i>
+            </button>
             </div> 
 		</div> 
 		
 
 		<div class="Sub_field2 Add">
-			<div class="add buta mybutt" onclick="Add()"><img src="images/+.png"></div>
+			<div class="add buta mybutt" onclick="Add()"> Add Product  <img class="plussign" src="images/+.png"></div>
 			
 		</div>
         <table class="index_table ">

@@ -111,7 +111,7 @@ table tr td {
 }
 
 .sub_container {
-  min-width: 30rem;
+  min-width: 60vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -168,6 +168,10 @@ label {
 }
 table tr {
   text-transform: none;
+}
+button,
+.button {
+  cursor: pointer;
 }
 .mybuttLeads {
   text-align: center;

@@ -24,6 +24,21 @@
         border: 1px solid black;
         border-collapse: collapse;
     }
+    .Checkout{
+    color: white;
+    padding: 10px;
+    background: #0ce3ff;
+    border: none;
+    font-size: 15px;
+    width: 152px;
+}
+.Total{
+   
+    padding: 10px;
+   
+    font-size: 15px;
+    width: 152px;
+}
 </style>
 
 <body>
@@ -37,10 +52,8 @@
                 <input type="text " class="Total" id="total" name="total"  disabled >
             </div>
             <div class="field-box ">
-                <label>
-               Pay:
-                 </label>
-               <button  onclick="reset(this)" class="buta button">Pay Now</a>
+               
+               <button  onclick="reset(this)" class="buta CheckOut ">CheckOut</a>
             </div> 
 		</div> 
 		
@@ -52,7 +65,7 @@
                 <td>Name</td>
                 <td>Description</td>
                 <td>price</td>
-                <td>Add a review</td>
+                <td>Rate the product now!</td>
             </tr>
         </table>
     </div>

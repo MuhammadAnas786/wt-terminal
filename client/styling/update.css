@@ -4,6 +4,10 @@
   box-sizing: border-box;
   outline: none;
 }
+button,
+.button {
+  cursor: pointer;
+}
 
 @font-face {
   font-family: monster;
@@ -72,7 +76,7 @@ table tr td {
 }
 
 .sub_container {
-  min-width: 30rem;
+  min-width: 65vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
